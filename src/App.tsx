@@ -19,8 +19,7 @@ function App() {
     setLoading(true);
     try {
       const formData = new FormData(event.currentTarget);
-      const { data, errors } = await
-      amplifyClient.queries.askBedrock({
+      const { data, errors } = await amplifyClient.queries.askBedrock({
         ingredients: [formData.get("ingredients")?.toString() || ""],
       });
       if (!errors) {
