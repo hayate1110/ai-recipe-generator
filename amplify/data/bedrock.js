@@ -30,13 +30,11 @@ export function request(ctx) {
 }
 
 export function response(ctx) {
-    console.log("RAW BODY =", ctx.result.body);
     // Parse the response body
     const parsedBody = JSON.parse(ctx.result.body);
-    console.log("PARSED BODY =", parsedBody);
     // Extract the text content from the response
     const res = {
-    body: parsedBody.content[0].text,
+        body: parsedBody.content[0].text,
     };
     // Return the response
     return res;
